@@ -105,7 +105,7 @@ namespace CatApp
            if(Validation.GetHasError(uxName))
             {
                 DialogResult = false;
-                //e.Handled = true;
+                e.Handled = true;
                 return;
             }
             //Cat = new CatModel();
