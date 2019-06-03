@@ -1,0 +1,138 @@
+﻿<Window x:Class="CatApp.CatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatApp"
+        mc:Ignorable="d"
+        Title="CatWindow" Height="700" Width="500"
+        FocusManager.FocusedElement="{Binding ElementName=uxName}"
+        Loaded="Window_Loaded">
+    <Border Padding="10">
+        <Grid x:Name="uxGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Name:</TextBlock>
+            <TextBox x:Name="uxName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="0" MaxLength="50"></TextBox>
+            <Label x:Name="uxNameError" Grid.Column="1" Grid.Row="1" Foreground="Red" Content="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Age:</TextBlock>
+            <TextBox x:Name="uxAge" Text="{Binding Age, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="2"></TextBox>
+            <Label x:Name="uxAgeError" Grid.Column="1" Grid.Row="3" Foreground="Red" Content="{Binding AgeError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Padding="2, 2, 10, 2">Weight:</TextBlock>
+            <TextBox x:Name="uxWeight" Text="{Binding Weight}" Grid.Column="1" Grid.Row="4"></TextBox>
+
+            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Gender:</TextBlock>
+            <TextBox x:Name="uxGender" Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="5" MaxLength="1"></TextBox>
+            <Label x:Name="uxGenderError" Grid.Column="1" Grid.Row="6" Foreground="Red"  Content="{Binding GenderError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Primary Color:</TextBlock>
+            <TextBox x:Name="uxPrimaryColor" Text="{Binding PrimaryColor, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="7" MaxLength="50"></TextBox>
+            <Label x:Name="uxPrimaryColorError" Grid.Column="1" Grid.Row="8" Foreground="Red" Content="{Binding PrimaryColorError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right" Padding="2, 2, 10, 2">Secondary Color:</TextBlock>
+            <TextBox x:Name="uxSecondaryColor" Text="{Binding SecondaryColor}" Grid.Column="1" Grid.Row="9" MaxLength="50"></TextBox>
+
+            <TextBlock Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Padding="2, 2, 10, 2">Breed:</TextBlock>
+            <TextBox x:Name="uxBreed" Text="{Binding Breed}" Grid.Column="1" Grid.Row="10" MaxLength="100"></TextBox>
+
+            <TextBlock Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Friendly:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11">
+                <RadioButton x:Name="uxFriendlyYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxFriendlyNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="12" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Ear Tipped:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="12">
+                <RadioButton x:Name="uxEarTippedYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxEarTippedNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="13" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*De-Clawed:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="13">
+                <RadioButton x:Name="uxDeClawedYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxDeClawedNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="14" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*MicroChipped:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="14">
+                <RadioButton x:Name="uxMicroChippedYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxMicroChippedNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="15" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Spayed or Neutered:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="15">
+                <RadioButton x:Name="uxSpayedNeuteredYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxSpayedNeuteredNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="16" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Vaccinated:</TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="16">
+                <RadioButton x:Name="uxVaccinatedYes" IsChecked="true">Yes</RadioButton>
+                <RadioButton x:Name="uxVaccinatedNo">No</RadioButton>
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="17" HorizontalAlignment="Right" Padding="2, 2, 10, 2">Comments:</TextBlock>
+            <TextBox x:Name="uxComments" Text="{Binding Comments}" Grid.Column="1" Grid.Row="17" AcceptsReturn="True" TextWrapping="Wrap" Height="60" MaxLength="2000"></TextBox>
+
+            <!--<TextBlock Grid.Column="0" Grid.Row="14" HorizontalAlignment="Right" Padding="2, 2, 10, 2">Photo:</TextBlock>
+            <Image x:Name="uxPhoto" Grid.Column="1" Grid.Row="14"></Image>-->
+
+            <TextBlock Grid.Column="0" Grid.Row="18" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Colony Borough:</TextBlock>
+            <TextBox x:Name="uxColonyBorough" Text="{Binding ColonyBorough, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="18" MaxLength="100"></TextBox>
+            <Label x:Name="uxColonyBoroughError" Grid.Column="1" Grid.Row="19" Foreground="Red" Content="{Binding ColonyBoroughError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="20" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Colony Neighborhood:</TextBlock>
+            <TextBox x:Name="uxColonyNeighborhood" Text="{Binding ColonyNeighborhood, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="20" MaxLength="100"></TextBox>
+            <Label x:Name="uxColonyNeighborhoodError" Grid.Column="1" Grid.Row="21" Foreground="Red" Content="{Binding ColonyNeighborhoodError, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+            <TextBlock Grid.Column="0" Grid.Row="22" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Colony Caretaker Name:</TextBlock>
+            <TextBox x:Name="uxColonyCaretakerName" Text="{Binding ColonyCaretakerName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="22" MaxLength="100"></TextBox>
+            <Label x:Name="uxColonyCaretakerNameError" Grid.Column="1" Grid.Row="23" Foreground="Red" Content="{Binding ColonyCaretakerNameError, UpdateSourceTrigger=PropertyChanged}"></Label>
+            
+            <TextBlock Grid.Column="0" Grid.Row="24" HorizontalAlignment="Right" Padding="2, 2, 10, 2">*Colony Caretaker Phone:</TextBlock>
+            <TextBox x:Name="uxColonyCaretakerPhone" Text="{Binding ColonyCaretakerPhone, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" Grid.Row="24" MaxLength="25"></TextBox>
+            <Label x:Name="uxColonyCaretakerPhoneError" Grid.Column="1" Grid.Row="25" Foreground="Red" Content="{Binding ColonyCaretakerPhoneError, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="26" HorizontalAlignment="Right">
+                <Button x:Name="uxSubmit"  MinWidth="10" HorizontalAlignment="Center" Click="uxSubmit_Click" Margin="10">Add</Button>
+                <Button x:Name="uxCancel"  MinWidth="10" HorizontalAlignment="Center" Click="uxCancel_Click" Margin="10">Cancel</Button>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

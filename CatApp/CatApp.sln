@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatApp", "CatApp\CatApp.csproj", "{A3BAA9A4-7D0D-4014-BF59-F639FBB4BD9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatDB", "CatDB\CatDB.csproj", "{C130BCA6-1351-428D-B23D-1B90E2D5F743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatRepository", "CatRepository\CatRepository.csproj", "{86FC020D-8D9E-42A0-8E59-5037EDFD910B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3BAA9A4-7D0D-4014-BF59-F639FBB4BD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BAA9A4-7D0D-4014-BF59-F639FBB4BD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BAA9A4-7D0D-4014-BF59-F639FBB4BD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BAA9A4-7D0D-4014-BF59-F639FBB4BD9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C130BCA6-1351-428D-B23D-1B90E2D5F743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C130BCA6-1351-428D-B23D-1B90E2D5F743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C130BCA6-1351-428D-B23D-1B90E2D5F743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C130BCA6-1351-428D-B23D-1B90E2D5F743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86FC020D-8D9E-42A0-8E59-5037EDFD910B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FC020D-8D9E-42A0-8E59-5037EDFD910B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86FC020D-8D9E-42A0-8E59-5037EDFD910B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FC020D-8D9E-42A0-8E59-5037EDFD910B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77985204-79CA-4C84-ACB9-50E6C7791BD7}
+	EndGlobalSection
+EndGlobal

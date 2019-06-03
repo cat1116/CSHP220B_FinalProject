@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CATSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="PrimaryColor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecondaryColor" Type="varchar" MaxLength="50" />
+          <Property Name="Breed" Type="varchar" MaxLength="100" />
+          <Property Name="Friendly" Type="bit" Nullable="false" />
+          <Property Name="EarTipped" Type="bit" Nullable="false" />
+          <Property Name="DeClawed" Type="bit" Nullable="false" />
+          <Property Name="MicroChipped" Type="bit" Nullable="false" />
+          <Property Name="SpayedNeutered" Type="bit" Nullable="false" />
+          <Property Name="Vaccinated" Type="bit" Nullable="false" />
+          <Property Name="Comments" Type="varchar" MaxLength="2000" />
+          <Property Name="Photo" Type="varchar" MaxLength="1000" />
+          <Property Name="ColonyBorough" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ColonyNeighborhood" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ColonyCaretakerName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ColonyCaretakerPhone" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CATSModelStoreContainer">
+          <EntitySet Name="Cats" EntityType="Self.Cats" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CATSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SecondaryColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Breed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Friendly" Type="Boolean" Nullable="false" />
+          <Property Name="EarTipped" Type="Boolean" Nullable="false" />
+          <Property Name="DeClawed" Type="Boolean" Nullable="false" />
+          <Property Name="MicroChipped" Type="Boolean" Nullable="false" />
+          <Property Name="SpayedNeutered" Type="Boolean" Nullable="false" />
+          <Property Name="Vaccinated" Type="Boolean" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ColonyBorough" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ColonyNeighborhood" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ColonyCaretakerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ColonyCaretakerPhone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CATSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cats" EntityType="Self.Cat" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CATSModelStoreContainer" CdmEntityContainer="CATSEntities">
+          <EntitySetMapping Name="Cats">
+            <EntityTypeMapping TypeName="CATSModel.Cat">
+              <MappingFragment StoreEntitySet="Cats">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PrimaryColor" ColumnName="PrimaryColor" />
+                <ScalarProperty Name="SecondaryColor" ColumnName="SecondaryColor" />
+                <ScalarProperty Name="Breed" ColumnName="Breed" />
+                <ScalarProperty Name="Friendly" ColumnName="Friendly" />
+                <ScalarProperty Name="EarTipped" ColumnName="EarTipped" />
+                <ScalarProperty Name="DeClawed" ColumnName="DeClawed" />
+                <ScalarProperty Name="MicroChipped" ColumnName="MicroChipped" />
+                <ScalarProperty Name="SpayedNeutered" ColumnName="SpayedNeutered" />
+                <ScalarProperty Name="Vaccinated" ColumnName="Vaccinated" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ColonyBorough" ColumnName="ColonyBorough" />
+                <ScalarProperty Name="ColonyNeighborhood" ColumnName="ColonyNeighborhood" />
+                <ScalarProperty Name="ColonyCaretakerName" ColumnName="ColonyCaretakerName" />
+                <ScalarProperty Name="ColonyCaretakerPhone" ColumnName="ColonyCaretakerPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
