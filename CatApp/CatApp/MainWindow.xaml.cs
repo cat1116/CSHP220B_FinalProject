@@ -65,6 +65,7 @@ namespace CatApp
         {
             var window = new CatWindow();
             window.Cat = selectedCat.Clone();
+            window.Title = "Update Cat";
 
             if (window.ShowDialog() == true)
             {

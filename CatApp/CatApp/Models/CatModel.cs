@@ -378,13 +378,22 @@ namespace CatApp.Models
         {
             get
             {
-                return NameError + ", " + AgeError + ", " + GenderError + ", " + PrimaryColorError + ", " + ColonyBoroughError + ", " + 
+                if ((NameError != string.Empty) || (AgeError != string.Empty) || (GenderError != string.Empty) || (PrimaryColorError != string.Empty) ||
+                    (ColonyBoroughError != string.Empty) || (ColonyNeighborhoodError != string.Empty) || (ColonyCaretakerNameError != string.Empty) ||
+                    (ColonyCaretakerPhoneError != string.Empty))
+                {
+                    return NameError + ", " + AgeError + ", " + GenderError + ", " + PrimaryColorError + ", " + ColonyBoroughError + ", " +
                     ColonyNeighborhoodError + ", " + ColonyCaretakerNameError + ", " + ColonyCaretakerPhoneError;
+
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
         private static readonly Regex _validRegex = new Regex(@"^\d{1-2}$"); //regex for 1 or 2 digits.
-        string AllErrors = "";
 
 
         // IDataErrorInfo interface
@@ -393,7 +402,7 @@ namespace CatApp.Models
         {
             get
             {
-                //NameError = "";
+                string AllErrors = "";
                 switch (columnName)
                 {
                     case "Name":
@@ -408,7 +417,7 @@ namespace CatApp.Models
 
                             if(NameError != null)
                             {
-                                AllErrors = AllErrors + NameError;
+                                AllErrors = NameError;
 
                             }
                             break;
@@ -420,13 +429,13 @@ namespace CatApp.Models
 
                             if (Age<0)
                             {
-                                tempAgeError = "Age cannot be negative. ";
+                                tempAgeError = "Age must be numeric and cannot be negative. ";
                             }
 
                             bool validAge = !(_validRegex.IsMatch(Age.ToString()));
                             if (!validAge)
                             {
-                                tempAgeError += "Age must be 1 or 2 digits.";
+                                tempAgeError += "Age must be numeric and cannot be negative. ";
                             }
 
                             if(tempAgeError != "")
@@ -436,7 +445,7 @@ namespace CatApp.Models
 
                             if (AgeError != null)
                             {
-                                AllErrors = AllErrors + AgeError;
+                                AllErrors = AgeError;
 
                             }
                             break;
@@ -452,7 +461,7 @@ namespace CatApp.Models
 
                             if (GenderError != null)
                             {
-                                AllErrors = AllErrors + GenderError;
+                                AllErrors = GenderError;
 
                             }
                             break;
@@ -468,7 +477,7 @@ namespace CatApp.Models
 
                             if (PrimaryColorError != null)
                             {
-                                AllErrors = AllErrors + PrimaryColorError;
+                                AllErrors = PrimaryColorError;
 
                             }
                             break;
@@ -484,7 +493,7 @@ namespace CatApp.Models
 
                             if (ColonyBoroughError != null)
                             {
-                                AllErrors = AllErrors + ColonyBoroughError;
+                                AllErrors = ColonyBoroughError;
 
                             }
                             break;
@@ -500,7 +509,7 @@ namespace CatApp.Models
 
                             if (ColonyNeighborhoodError != null)
                             {
-                                AllErrors = AllErrors + ColonyNeighborhoodError;
+                                AllErrors = ColonyNeighborhoodError;
 
                             }
                             break;
@@ -516,7 +525,7 @@ namespace CatApp.Models
 
                             if (ColonyCaretakerNameError != null)
                             {
-                                AllErrors = AllErrors + ColonyCaretakerNameError;
+                                AllErrors = ColonyCaretakerNameError;
 
                             }
                             break;
@@ -532,7 +541,7 @@ namespace CatApp.Models
 
                             if (ColonyCaretakerPhoneError != null)
                             {
-                                AllErrors = AllErrors + ColonyCaretakerPhoneError;
+                                AllErrors = ColonyCaretakerPhoneError;
 
                             }
                             break;
@@ -541,6 +550,7 @@ namespace CatApp.Models
 
                 }
 
+                //If an empty string is returned, then the form passes validation, if the string is not empty then validaiton fails.
                 return AllErrors;
             }
         }

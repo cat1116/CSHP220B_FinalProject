@@ -99,35 +99,39 @@ namespace CatApp
             uxGrid.DataContext = Cat;
         }
 
-        private bool IsValid(DependencyObject obj)
-        {
-            //stackoverflow.com/questions/127477/detecting-wpf-validation-errors
-            // The dependency object is valid if it has no errors and all
-            // of its children (that are dependency objects) are error-free.
-            return !Validation.GetHasError(obj) &&
-            LogicalTreeHelper.GetChildren(obj)
-            .OfType<DependencyObject>()
-            .All(IsValid);
-        }
 
         private void uxSubmit_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            bool isValid = IsValid(uxGrid);
-           //if(Validation.GetHasError(uxName))
-           if(!isValid)
-            {
-                //DialogResult = false;
-=======
-           //TEST!!!!!
            if(Validation.GetHasError(uxName))
             {
                 DialogResult = false;
->>>>>>> origin
-                e.Handled = true;
+                //e.Handled = true;
                 return;
             }
-            
+            //Cat = new CatModel();
+
+            //Cat.Name = uxName.Text;
+
+            //int age = 0;
+            //if (uxAge.Text != null && uxAge.Text != string.Empty)
+            //{
+            //    int.TryParse(uxAge.Text, out age);
+
+            //}
+            //Cat.Age = age;
+
+            //int weight = 0;
+            //if (uxWeight.Text != null && uxWeight.Text != string.Empty)
+            //{
+            //    int.TryParse(uxWeight.Text, out weight);
+
+            //}
+            //Cat.Weight = weight;
+            //Cat.Gender = uxGender.Text;
+            //Cat.PrimaryColor = uxPrimaryColor.Text;
+            //Cat.SecondaryColor = uxSecondaryColor.Text;
+            //Cat.Breed = uxBreed.Text;
+
             if (uxFriendlyYes.IsChecked.Value)
             {
                 Cat.Friendly = true;
@@ -181,6 +185,14 @@ namespace CatApp
             {
                 Cat.Vaccinated = false;
             }
+
+            //Cat.Comments = uxComments.Text;
+            //Cat.Photo = string.Empty;
+
+            //Cat.ColonyBorough = uxColonyBorough.Text;
+            //Cat.ColonyNeighborhood = uxColonyNeighborhood.Text;
+            //Cat.ColonyCaretakerName = uxColonyCaretakerName.Text;
+            //Cat.ColonyCaretakerPhone = uxColonyCaretakerPhone.Text;
 
 
             // This is the return value of ShowDialog( ) below
